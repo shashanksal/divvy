@@ -15,6 +15,7 @@ Setup
 ------------
 For importing the database values, I have written importjson.js scripts. They can be found in ~/scripts/importjson.js <br>
 Run it using `node importjson.js` <br>
+The project can be run by using `npm start`
 
 APIs and Routes
 ------------
