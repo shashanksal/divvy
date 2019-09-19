@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const mongoUrl = "mongodb://localhost:27017/";
-const dbName = 'divvyDB2';
+const dbName = 'divvyDB';
 const mongoose = require("mongoose");
 mongoose.connect(mongoUrl+dbName, { useNewUrlParser: true ,useUnifiedTopology: true});
 const db = mongoose.connection;
@@ -10,16 +10,6 @@ const Trips =require('../models/Trips');
 
 let raw_dataset = fs.readFileSync( '../public/dataset.json', 'utf8');
 let divvy_dataset=JSON.parse(raw_dataset);
-
-
-
-// function createDatabase(dbName) {
-//     db.on("error",console.error.bind(console,"Connection error : "));
-//     db.once("open",function () {
-//         console.log("Connection successful and created Database : "+ dbName);
-//     });
-//
-// }
 
 
 
@@ -67,6 +57,4 @@ function importjson(Trips) {
     });
 }
 
-
-//createDatabase("divvyDB");
 createTrips("divvyDB");
